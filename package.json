@@ -3,17 +3,19 @@
   "version": "1.0.0",
   "description": "a todo list using mern stack",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"npm i",
-    "start":"node index.js"
+    "build": "npm i",
+    "start": "node index.js"
   },
   "author": "Vishwjeet thakur",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "mongodb": "^5.7.0",
     "mongoose": "^7.4.1"
   }
 }

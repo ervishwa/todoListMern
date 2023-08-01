@@ -2,27 +2,25 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import { Todo } from "./models/Todo.js";
-
 const app = express();
-
+import "./db/connection.js";
 app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("<h1>hello world</h1>");
+  res.send("<h1>Welcome to TodoList</h1>");
 });
-
-mongoose
-  .connect("mongodb://localhost:27017/mern-todo", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("connected to data base");
-  })
-  .catch((err) => {
-    console.log("something went wrong: " + err);
-  });
+// mongoose
+//   .connect(`${process.env.MongoDbUrl}/mern-todo`, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => {
+//     console.log("connected to data base");
+//   })
+//   .catch((err) => {
+//     console.log("something went wrong: " + err);
+//   });
 
 
 app.get('/todos' ,async (req, res) => {

@@ -19,5 +19,5 @@ const TodoSchema = new Schema({
     }
 })
 
-export const Todo = mongoose.model('TodoList', TodoSchema);
+export const Todo = mongoose.model("todolists", TodoSchema);
 
