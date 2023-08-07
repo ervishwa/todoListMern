@@ -8,6 +8,7 @@ const Db = process.env.MongoDbUrl;
 mongoose.connect(`${Db}`,{
     useNewUrlParser: true,
    useUnifiedTopology: true,
+   bufferTimeoutMS: 30000,
 }).then(()=>{
     console.log("database connection established")
 }).catch(err=>console.log("Error Occured " + err));
