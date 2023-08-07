@@ -24,8 +24,13 @@ app.get("/", (req, res) => {
 
 
 app.get('/todos' ,async (req, res) => {
+    console.log("hello");
+    try{
    const data = await Todo.find();
    return res.status(200).json(data);
+}catch(err){
+    return res.status(404).json("something went wrong: " + err);
+}
 })
 
 app.post('/todo/new', async (req, res) =>{
