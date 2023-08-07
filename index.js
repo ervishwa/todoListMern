@@ -2,16 +2,29 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import { Todo } from "./models/Todo.js";
-
+import dotenv from "dotenv";
 const app = express();
-
-import "./db/connection.js";
+dotenv.config();
+// import "./db/connection.js";
 app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to TodoList</h1>");
 });
+const Db = process.env.MongoDbUrl;
+
+mongoose
+  .connect(Db, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("connected to the database");
+  })
+  .catch((err) => {
+    console.log("something went wrong: " + err);
+  });
 
 // (async function (){
 //    await connection.js();
