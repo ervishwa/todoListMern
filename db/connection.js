@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+dotenv.config();
+// dotenv.config({ silent: process.env.NODE_ENV === 'production' });
 
-dotenv.config({ silent: process.env.NODE_ENV === 'production' });
 const Db = process.env.MongoDbUrl;
 //console.log(Db);
 mongoose.connect(`${Db}`,{

@@ -2,7 +2,9 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import { Todo } from "./models/Todo.js";
+
 const app = express();
+
 import "./db/connection.js";
 app.use(express.json());
 app.use(cors());
@@ -10,6 +12,10 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to TodoList</h1>");
 });
+
+// (async function (){
+//    await connection.js();
+// })
 // mongoose
 //   .connect(`${process.env.MongoDbUrl}/mern-todo`, {
 //     useNewUrlParser: true,
